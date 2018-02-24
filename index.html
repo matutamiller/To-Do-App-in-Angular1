@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do App in Angular1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+      <section id="appArea">
+          <div ng-controller="ToDoCtrl as ctrl" class="content-wr flex">
+              <h1>To Do App</h1>
+              <input ng-model="ctrl.newToDo" type="text" id="appInput" placeholder="Task to Add">
+              <button ng-click="ctrl.addNewToDo()" class="appBtn">Add</button>
+              <p>Your To Dos:</p>
+              <button ng-click="ctrl.triggerEditMode()" ng-hide="ctrl.editMode" class="appBtn">Edit</button>
+              <button ng-click="ctrl.triggerEditMode()" ng-show="ctrl.editMode" class="appBtn">Done</button>
+              <ol>
+                  <li ng-repeat="todo in ctrl.todos track by $index">
+                      <span ng-bind="todo" ng-hide="ctrl.editMode"></span>
+                      <input ng-model="todo" ng-show="ctrl.editMode" type="text">
+                      <button ng-hide="ctrl.editMode" ng-click="ctrl.deleteToDo($index)" class="appBtnClose">x</button>
+                  </li>
+              </ol>
+          </div>
+      </section>
+  </body>
+</html>
