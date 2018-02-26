@@ -1,3 +1,3 @@
 # To-Do-App-in-AngularJS
 
-<a href="https://matutamiller.github.io/To-Do-App-in-Angular1/">See online</a>
+<a href="https://matutamiller.github.io/To-Do-App-in-AngularJS/">See online</a>
